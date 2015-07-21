@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">		
+	<link rel="shortcut icon" type="image/ico" href="favicon.jpg" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+	<script src="socket.js"/></script>
+	<style>
+		body{
+		   	min-width: 1280px;
+		    margin: 0px;
+		    padding: 0px;
+		    font-family: sans-serif;
+		    left: 50%;
+		    right: 50%;
+		}
+		#top_bar{
+			height: 45px;
+			width: 100%;
+			/*min-width: 900px;*/
+			background-color: black;
+			position: fixed;	
+			float: left;
+			text-align: center;
+			margin: 0 auto;
+			background-image: url(logo_main.gif);
+			background-repeat-x: no-repeat;
+			background-repeat-y: no-repeat;
+			background-repeat: no-repeat;
+			-webkit-box-shadow: 0px 2px 13px 0px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 2px 13px 0px rgba(0,0,0,0.75);
+			box-shadow: 0px 2px 13px 0px rgba(0,0,0,0.75);
+			display: flex;
+	  		justify-content: center;
+	  		z-index:999;
+	  		color: white;
+	  		font-weight: bold;
+	  		vertical-align: center;
+		}
+
+		#mqtt_windows{
+			min-width: 1280px;
+			height: 800px;
+			float: center;
+			margin:0 auto;
+		}	
+			.status_mqtt{
+				background-color: black;
+				border-color: white;
+				border-width: 1px;
+				width: 100%;
+				height: 50px;
+				border-style: solid;
+				text-align: center;
+				color: white;
+				display: flex;
+			    justify-content:center;
+			    align-content:center;
+			    flex-direction:column;
+			}
+			#system_status{
+				width: 20%;
+				height: 100%;
+				float: left;
+				margin-top: 50px;
+				text-align: center;
+				position: fixed;
+				/*background-color: white;*/
+			}
+			#mqtt_messages{
+				width: 80%;
+				height: 100%;
+				float: left;
+				margin-top: 50px;
+				text-align: center;
+				float:right;
+			}
+				#timestamp{
+					width: 20%;
+					height: 100%;
+					float: left;
+					/*margin-top: 50px;*/
+					text-align: center;
+					/*background-color: green;*/
+				}
+				#topics_messages{
+					width: 80%;
+					height: 100%;
+					float: left;
+					/*margin-top: 50px;*/
+					text-align: left;
+					/*background-color: orange;*/
+				}
+	</style>
+	<title>Broker MQTT</title>
+</head>
+<body>
+	<div id="top_bar"><span style="margin-top:10px;">Broker MQTT - IPV4: 45.55.71.17:1883</span></div>
+	<div id="mqtt_windows">
+		<div id="system_status">
+			<div class="status_mqtt" id="clients_connected"></div>
+			<div class="status_mqtt" id="clients_total"></div>
+			<div class="status_mqtt" id="messages_received"></div>
+			<!-- <div class="status_mqtt" id="publish_received"></div> -->
+			<!-- <div class="status_mqtt" id="retained_count"></div> -->
+			<div class="status_mqtt" id="subscriptions_count"></div>
+			<div class="status_mqtt" id="uptime"></div>
+			<!-- <div class="status_mqtt" id="clients_maximum"></div> -->
+		</div>
+		<div id="mqtt_messages">
+			<div id="timestamp">
+			</div>
+			<div id="topics_messages">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
