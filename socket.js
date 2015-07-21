@@ -3,7 +3,7 @@ $(document).ready(function() {
     var obj_old, i;
 
     console.log("Javascript Loaded!");
-    var socket = io.connect('http://localhost:8080');
+    var socket = io.connect('http://aignacio.com:8080');
     
     socket.on('connect', function () {
         socket.emit('subscribe_main',{topic:'#'});
